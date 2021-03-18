@@ -1,6 +1,6 @@
 $(function(){
   // Stampa a schermo la lista
-  var list = ["comprare la pasta", "pulire la stanza", "dare l'acqua alle piante", "fare la lavatrice"];
+  var list = ["pulire la stanza", "dare l'acqua alle piante", "fare la lavatrice"];
   var bodyList = $("ul.list");
 
   for (var i = 0; i < list.length; i++) {
@@ -22,10 +22,14 @@ $(function(){
         $(this).val("");
       }
     }
-
   );
-
   // /Aggiungi valore input alla lista tramite tasto invio
+
+  // Rimuovi al click di X l'elemento dalla lista
+  $("ul.list").on("click", "span", function(){
+    $(this).parent("ul.list > li").fadeOut();
+  });
+  // Rimuovi al click di X l'elemento dalla lista
 
 
 });
